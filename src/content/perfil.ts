@@ -20,12 +20,23 @@ export const perfil = {
   resumo:
     "Construo aplicações web com TypeScript, React e Node.js — e software que roda em produção.",
 
-  /** Paragrafo da secao Sobre. Todo dado confere com o currículo. */
-  bio:
-    "Trabalho com suporte técnico e desenvolvimento na NEOiD, onde criei e mantenho o " +
-    "PTZ Deck: um plugin que controla câmeras PTZ pela rede local e está publicado na " +
-    "Elgato Marketplace. Estudo Análise e Desenvolvimento de Sistemas na FIAP e venho me " +
-    "aprofundando em TypeScript, React, Next.js e Node.js.",
+  /**
+   * Parágrafos da seção Sobre. Todo dado confere com o currículo, com os
+   * certificados ou com o repositório do PTZ Deck. Sem "apaixonado por
+   * tecnologia" e sem história de superação inventada.
+   */
+  sobre: [
+    "Comecei estudando programação por conta, em cursos da Alura e da Rocketseat, " +
+      "enquanto trabalhava em uma função administrativa. Em junho de 2025 entrei na " +
+      "NEOiD, empresa de tecnologia para produção e transmissão audiovisual, onde " +
+      "presto suporte técnico e desenvolvo software para a operação.",
+    "Foi lá que construí o NEOiD PTZ Deck, um plugin que controla câmeras PTZ pela " +
+      "rede local e hoje está publicado na Elgato Marketplace. Trabalhar perto de " +
+      "quem opera ao vivo mudou o jeito como penso software: a decisão que importa " +
+      "é a que economiza um passo do operador no meio de uma transmissão.",
+    "Hoje curso Análise e Desenvolvimento de Sistemas na FIAP e me aprofundo em " +
+      "TypeScript, React, Next.js e Node.js, com direção Fullstack.",
+  ],
 
   /** Usado como selo no hero e no fim da description da metadata. */
   objetivo: "Disponível para estágio ou vaga júnior",

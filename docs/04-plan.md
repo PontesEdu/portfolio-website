@@ -151,7 +151,7 @@ perder. Se surgir dúvida entre informação e efeito, ganha a informação.
 
 ---
 
-## Fase 4 — Conteúdo profissional
+## Fase 4 — Conteúdo profissional ✅ implementada, aguardando validação
 
 **Objetivo:** a narrativa profissional, sem inflar nada.
 
@@ -162,19 +162,25 @@ cursos)
 **Arquivos:** `src/components/sections/{sobre,stack,trajetoria}.tsx` ·
 `src/content/{stack,experiencia}.ts`
 
-**Dependências:** Fases 1 a 3. **Bloqueada em parte** pelas pendências P2
-(freelancer), P3 (certificados) e P4 (NestJS/DDD) de `01-discovery.md`.
+**Dependências:** Fases 1 a 3. Pendências P2, P3 e P4 resolvidas pelo autor
+antes da execução.
 
 **Critérios de aceitação**
 
-- [ ] Todo dado confere com o currículo — sem número, resultado ou
-      responsabilidade estimada
-- [ ] Zero barra de progresso e zero parede de logos
-- [ ] Toda tecnologia da seção Stack aparece como tag em ao menos um projeto
-- [ ] "Sobre" não contém clichê ("apaixonado por tecnologia", "café em código")
-- [ ] JCE aparece compacto, sem competir com a NEOiD
-- [ ] Hierarquia de heading correta, sem pular nível
-- [ ] Item pendente **não foi escrito por suposição** — ficou de fora
+- [x] Todo dado confere com o currículo — sem número, resultado ou
+      responsabilidade estimada. Os 7 certificados foram lidos um a um: título,
+      carga horária e data saíram do próprio certificado
+- [x] Zero barra de progresso e zero parede de logos
+- [x] Toda tecnologia da seção Stack aparece como tag em ao menos um projeto
+- [x] "Sobre" não contém clichê ("apaixonado por tecnologia", "café em código")
+- [x] JCE aparece compacto, sem competir com a NEOiD
+- [x] Hierarquia de heading correta, sem pular nível — auditada no HTML gerado
+- [x] Item pendente **não foi escrito por suposição** — P2 (freelancer) ficou de
+      fora por decisão; Rocketseat aparece sem carga horária por não haver
+      comprovação
+
+**Resultado:** os 7 links de certificado respondem 200. Pendências P2, P3 e P4
+encerradas em D-22, D-23 e D-24.
 
 **Riscos:** o histórico é curto. A saída não é inflar, é fundir experiência +
 formação + cursos numa timeline só, que fica cheia e honesta.

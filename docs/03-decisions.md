@@ -318,6 +318,53 @@ falha mais frequente, que é uma ilustração genérica barateando a página.
 
 ---
 
+### D-22 🔵 Experiência freelancer fica de fora
+
+**Por quê:** o autor esclareceu que não foi freelancer — fez um projeto para
+amigos e não tem mais os arquivos. Sem artefato, sem cliente citável e sem
+período confirmado, listar isso como experiência seria exatamente o modo de
+falha que a pesquisa aponta como o mais detectável por revisor sênior:
+experiência inflada. Uma trajetória curta e verdadeira é mais forte que uma
+inchada.
+
+**Encerra a pendência P2.**
+
+---
+
+### D-23 🔵 Cursos com certificado público e link para conferência
+
+Sete cursos da Alura entram na Trajetória, cada um com título, carga horária,
+data e **link direto para o certificado**.
+
+**Por quê:** título, carga horária e data foram lidos de cada certificado, um a
+um — nada foi arredondado nem estimado. Linkar o certificado transforma cada
+linha de afirmação em fato verificável, que é o padrão mais alto que um
+candidato júnior consegue atingir sem experiência profissional.
+
+As trilhas da Rocketseat aparecem como uma frase, **sem carga horária**, porque
+o autor não guardou os certificados. Declarar horas sem comprovação seria
+inventar.
+
+**Encerra a pendência P3.**
+
+---
+
+### D-24 🔵 NestJS, Java e DDD aparecem só pelos cursos, não na seção Stack
+
+**Por quê:** o autor tem certificado e repositório de curso nessas tecnologias,
+mas não as usa há um tempo e por isso não as colocou no currículo. A seção Stack
+é a lista do que ele trabalha hoje, e a regra do projeto é que toda tecnologia
+listada ali apareça como tag em algum projeto — do contrário vira afirmação sem
+lastro.
+
+Os cursos resolvem isso sem custo: mostram a amplitude do estudo, datados e
+comprovados, sem alegar prática atual. Um revisor lê "estudou NestJS em 2024",
+que é verdade, em vez de "trabalha com NestJS", que não é.
+
+**Encerra a pendência P4.**
+
+---
+
 ## Riscos
 
 ### R-01 🔴 Só um dos três destaques está apresentável publicamente
