@@ -29,7 +29,7 @@ da listagem na Elgato Marketplace · pesquisa de UX/UI e técnica, com fontes ·
 
 ---
 
-## Fase 1 — Fundação
+## Fase 1 — Fundação ✅ implementada, aguardando validação visual
 
 **Objetivo:** projeto rodando com os dois temas corretos e o conteúdo tipado
 pronto para ser consumido. Nenhuma seção visual ainda.
@@ -60,14 +60,16 @@ pronto para ser consumido. Nenhuma seção visual ainda.
 
 **Critérios de aceitação**
 
-- [ ] `typecheck`, `lint` e `build` passam sem aviso
+- [x] `typecheck`, `lint` e `build` passam sem aviso
 - [ ] Os dois temas alternam **sem flash** na carga e sem erro de hidratação
-- [ ] Cada token da rampa documentado com sua função, nos dois temas
-- [ ] Nenhum par de contraste do tema abaixo de AA (conferido no papel, antes de
-      existir componente)
-- [ ] `src/content/` compila e nenhum dado contradiz o currículo
-- [ ] `NEXT_PUBLIC_SITE_URL` é a **única** fonte da URL do site
-- [ ] Repositório sem artefato ou referência de ferramenta
+      — depende de validação visual do autor
+- [x] Cada token da rampa documentado com sua função, nos dois temas
+- [x] Nenhum par de contraste do tema abaixo de AA — verificado por script antes
+      de existir componente; 30 pares checados, todos passam
+- [x] `src/content/` compila e nenhum dado contradiz o currículo
+- [x] `NEXT_PUBLIC_SITE_URL` é a **única** fonte da URL do site
+- [x] Repositório sem artefato ou referência de ferramenta — auditado antes do
+      commit e conferido no repositório publicado
 
 **Riscos:** errar a rampa aqui se propaga por todas as fases — é a única parte do
 projeto cara de refazer depois. Vale gastar tempo extra e validar visualmente as

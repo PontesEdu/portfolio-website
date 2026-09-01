@@ -314,7 +314,7 @@ sobre Next 16 está desatualizada. Detalhe em D-16.
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `next lint` removido na v16                                                       | Script vira `eslint .`; chave `eslint` sai do `next.config`                                                                  |
 | `priority` do `<Image>` depreciada                                                | Usar `preload` / `loading="eager"` / `fetchPriority="high"`                                                                  |
-| `eslint-config-next` registra o plugin `jsx-a11y` mas não liga as regras | Aplicar `jsxA11y.flatConfigs.recommended.rules`; espalhar o config inteiro falha com `Cannot redefine plugin` |
+| `eslint-config-next` registra o plugin `jsx-a11y` mas não liga as regras          | Aplicar `jsxA11y.flatConfigs.recommended.rules`; espalhar o config inteiro falha com `Cannot redefine plugin`                |
 | `images.qualities` agora obrigatório, default `[75]`                              | Valor fora da lista é ajustado silenciosamente                                                                               |
 | `scroll-behavior: smooth` automático removido                                     | Precisa de `data-scroll-behavior="smooth"`, e isso interage com reduced-motion                                               |
 | Tailwind v4 é CSS-first                                                           | Sem `tailwind.config.js`. `@theme inline` é obrigatório quando um token referencia outra variável                            |

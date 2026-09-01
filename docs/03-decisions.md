@@ -220,12 +220,19 @@ Confirmados direto na doc, porque a maioria dos tutoriais está desatualizada:
 ### D-17 ⏳ O guia de desenvolvimento fica fora do repositório público
 
 O guia de regras de desenvolvimento é criado na raiz, com o nome que o autor
-pediu, e entra no `.gitignore`.
+pediu, e é ignorado por `.git/info/exclude` — **não** pelo `.gitignore`.
 
 **Por quê:** o autor pediu que o repositório do portfólio não contenha artefato
 nem referência da ferramenta de desenvolvimento. O nome de arquivo solicitado
 é, em si, uma dessas referências — versioná-lo contradiria a própria regra que
 ele descreve. O conteúdo é neutro e não menciona ferramenta alguma.
+
+**Detalhe que só apareceu na implementação:** colocar o nome no `.gitignore`
+resolveria o arquivo, mas o `.gitignore` é versionado — a regra de exclusão
+publicaria justamente o nome que se queria esconder. Ignores locais pertencem a
+`.git/info/exclude`, que existe para exatamente isso e nunca é enviado.
+O `.gitignore` versionado ficou só com `AGENTS.md`, gerado pelo `next dev`, cujo
+nome não identifica ferramenta alguma.
 
 A documentação pública do projeto continua sendo `docs/`, que cobre discovery,
 pesquisa, decisões e plano sem qualquer menção a ferramenta.
