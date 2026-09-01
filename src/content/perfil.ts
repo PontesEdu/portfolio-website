@@ -26,24 +26,20 @@ export const perfil = {
    * tecnologia" e sem história de superação inventada.
    */
   sobre: [
-    "Comecei a programar sozinho, por vídeos no YouTube. Conforme foi ficando " +
-      "interessante, passei a fazer cursos da Alura e da Rocketseat e a construir " +
-      "projetos — foi assim que fui cobrindo front-end e back-end, enquanto " +
-      "trabalhava em uma função administrativa.",
-    "Em junho de 2025 entrei na NEOiD, empresa de tecnologia para produção e " +
-      "transmissão audiovisual. Ali criei o NEOiD PTZ Deck, um plugin que controla " +
-      "câmeras PTZ pela rede local. O projeto me obrigou a entender rede a sério: " +
-      "protocolos como VISCA e CGI/HTTP, comunicação por TCP e UDP, e integração " +
-      "com equipamentos de fabricantes diferentes.",
-    "Também foi ali que ganhei vivência de produção ao vivo. Trabalhar perto de " +
-      "quem opera mudou o jeito como penso software: a decisão que importa não é a " +
-      "mais elegante no código, é a que economiza um passo do operador no meio de " +
-      "uma transmissão.",
-    "Hoje curso Análise e Desenvolvimento de Sistemas na FIAP, uma das principais " +
-      "faculdades de tecnologia do país. Durante a graduação participo de projetos " +
-      "práticos e challenges em parceria com empresas, resolvendo problemas reais " +
-      "em equipe. Sigo me aprofundando em TypeScript, React, Next.js e Node.js, " +
-      "com direção Fullstack.",
+    "Comecei estudando programação por conta, em cursos da Alura e da Rocketseat, " +
+      "enquanto trabalhava em uma função administrativa. Em junho de 2025 entrei na " +
+      "NEOiD, empresa de tecnologia para produção e transmissão audiovisual, onde " +
+      "presto suporte técnico e desenvolvo software para a operação.",
+    "Ali criei o NEOiD PTZ Deck, um plugin que controla câmeras PTZ pela rede " +
+      "local. Foi com ele que aprendi sobre redes, protocolos de comunicação e " +
+      "integração com equipamentos de fabricantes diferentes.",
+    "Hoje curso Análise e Desenvolvimento de Sistemas na FIAP, onde participo de " +
+      "projetos práticos e challenges em parceria com empresas, resolvendo " +
+      "problemas reais em equipe.",
+    "Sigo me aprofundando em TypeScript, React, Next.js e Node.js, com direção " +
+      "Fullstack. Fora isso, venho estudando arquitetura de aplicações, novos " +
+      "frameworks, experiência do usuário e automações com IA aplicadas ao dia a " +
+      "dia de desenvolvimento.",
   ],
 
   /** Usado como selo no hero e no fim da description da metadata. */
