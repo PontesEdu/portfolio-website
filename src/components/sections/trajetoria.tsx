@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { SectionHeading } from "@/components/section-heading";
 import { cursos, trajetoria } from "@/content/experiencia";
+import { perfil } from "@/content/perfil";
 
 /**
  * Experiência, formação e cursos numa linha do tempo única.
@@ -10,8 +11,10 @@ import { cursos, trajetoria } from "@/content/experiencia";
  * é o que faz um portfólio júnior parecer inflado. Juntas, contam uma história
  * contínua e cheia.
  *
- * O período fica numa coluna própria em telas largas, com `tabular-nums` para
- * os números alinharem entre as linhas.
+ * O trilho é uma div própria em vez de `border-l` para poder terminar em
+ * gradiente: a linha se dissolve no fim em vez de parar seca, sugerindo que a
+ * trajetória continua. O nó de cada entrada tem um anel da cor do fundo, o que
+ * faz o trilho parecer passar por trás dele.
  */
 export function Trajetoria() {
   return (
@@ -21,24 +24,36 @@ export function Trajetoria() {
     >
       <SectionHeading indice="04" titulo="Trajetória" />
 
-      <ol className="mt-10 space-y-10">
-        {trajetoria.map((entrada) => (
-          <li
-            key={`${entrada.organizacao}-${entrada.titulo}`}
-            className="grid gap-2 sm:grid-cols-[10rem_1fr] sm:gap-6"
-          >
-            <p className="flex items-center gap-2 label-mono tabular-nums sm:pt-1.5">
-              {entrada.atual && (
-                <span
-                  aria-hidden="true"
-                  className="inline-block size-1.5 shrink-0 rounded-full bg-primary"
-                />
-              )}
-              {entrada.periodo}
-            </p>
+      {/* O trilho fica fora do <ol> de proposito: uma lista ordenada so pode
+          conter <li>, e um <div> solto ali dentro seria HTML invalido. */}
+      <div className="relative mt-10">
+        <div
+          aria-hidden="true"
+          className="absolute top-2 bottom-0 left-0 w-px bg-linear-to-b from-border via-border to-transparent"
+        />
 
-            <div>
-              <h3 className="text-lg font-semibold">{entrada.titulo}</h3>
+        <ol className="space-y-12 pl-8">
+          {trajetoria.map((entrada) => (
+            <li
+              key={`${entrada.organizacao}-${entrada.titulo}`}
+              className="relative"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute top-1 -left-8 flex size-3.5 -translate-x-1/2 items-center justify-center rounded-full bg-background"
+              >
+                <span
+                  className={
+                    entrada.atual
+                      ? "size-2 rounded-full bg-primary"
+                      : "size-2 rounded-full border border-muted-foreground/60"
+                  }
+                />
+              </span>
+
+              <p className="label-mono tabular-nums">{entrada.periodo}</p>
+
+              <h3 className="mt-2 text-lg font-semibold">{entrada.titulo}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 {entrada.organizacao}
                 {entrada.local ? ` · ${entrada.local}` : ""}
@@ -61,17 +76,27 @@ export function Trajetoria() {
                   ))}
                 </ul>
               )}
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      </div>
 
       <div className="mt-14 border-t pt-8">
         <h3 className="label-mono">Cursos concluídos</h3>
         <p className="mt-3 max-w-[66ch] text-sm leading-relaxed text-muted-foreground">
-          Certificados da Alura, cada um com link para conferência. Também
-          concluí trilhas da Rocketseat de Node.js, TypeScript e React, cujos
-          certificados não guardei.
+          Os sete abaixo são uma amostra — os que mais se conectam ao que faço
+          hoje, cada um com link para o certificado. Ao todo são cerca de 50
+          cursos concluídos na Alura, além das trilhas da Rocketseat e de outros
+          cursos; parte dos certificados também está no{" "}
+          <a
+            href={perfil.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="text-link underline underline-offset-4"
+          >
+            meu LinkedIn
+          </a>
+          .
         </p>
 
         <ul className="mt-6 space-y-1">

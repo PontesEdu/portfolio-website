@@ -49,4 +49,13 @@ export const stack: GrupoDeStack[] = [
     titulo: "Práticas",
     itens: ["Princípios SOLID", "Clean Code", "Testes automatizados"],
   },
+  /**
+   * Este grupo é sobre o fluxo de trabalho, não sobre a stack dos projetos --
+   * por isso não vale para ele a regra de "toda tecnologia aparece como tag em
+   * um projeto". O nome do grupo deixa a distinção explícita.
+   */
+  {
+    titulo: "IA no fluxo de trabalho",
+    itens: ["Claude Code", "Agentes", "Skills", "Automação de tarefas"],
+  },
 ];
