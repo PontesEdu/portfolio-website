@@ -243,6 +243,55 @@ esta é a única decisão do documento ainda em aberto.
 
 ---
 
+### D-18 🔵 Tipografia: Inter + JetBrains Mono
+
+Duas famílias, ambas variáveis, ambas auto-hospedadas por `next/font`.
+
+**Por quê Inter no corpo e na interface:** é a grotesca desenhada especificamente
+para tela, com x-height alto e boa desambiguação — é o padrão de facto de
+interface de produto de software, e é o que o portfólio mais citado da pesquisa
+(brittanychiang.com) usa. Não é uma escolha "segura por omissão": é a fonte cuja
+métrica foi feita para o tamanho em que o texto deste site vai ser lido.
+
+**Por quê JetBrains Mono no metadado:** a pesquisa registra o monoespaçado como
+sinal de identidade de desenvolvedor genuíno, adotado por Vercel, Linear, Raycast
+e Resend. Entre as monos, a da JetBrains é a mais associada ao ofício — foi
+desenhada por uma fabricante de IDE, para código. Usada em tag, data, rótulo de
+seção e nav, ela dá a identidade sem nenhum gimmick.
+
+**Substitui** Geist + Geist Mono, que vieram do `create-next-app`. Geist é ótima,
+mas é a fonte da Vercel e o default do scaffold: num portfólio Next.js
+hospedado na Vercel, é a tipografia que mais parece ter vindo de fábrica. A troca
+é por identidade, não por qualidade.
+
+**O que foi descartado e por quê:** Space Grotesk e Bricolage Grotesque têm mais
+caráter, mas caráter na fonte do corpo cansa em texto longo e envelhece rápido.
+Uma terceira família de display resolveria a vontade de personalidade violando a
+regra das duas famílias — e cada família a mais é um recurso a mais no caminho
+crítico.
+
+---
+
+### D-19 🔵 A personalidade vem do sistema, não do ornamento
+
+O autor pediu mais personalidade sem cair em genérico. A resposta deste projeto é
+que personalidade vem de composição, ritmo de espaçamento, contraste tipográfico,
+detalhe estrutural e microinteração com propósito — nesta ordem. Detalhado no
+guia de desenvolvimento §2.
+
+**Por quê:** a pesquisa é explícita em que o que separa profissional de chamativo
+é amplitude, não presença. Os portfólios de referência que mais se destacam não
+têm mais efeitos — têm melhor composição e melhor tipografia. E a maior parte dos
+sinais de "template" catalogados na pesquisa é justamente ornamento adicionado
+para compensar falta de sistema: barra de skill, parede de logos, gradiente,
+sombra em tudo.
+
+**Consequência prática:** todo elemento decorativo precisa responder a "isto
+ajuda o recrutador ou o revisor técnico?". Se não ajuda nenhum dos dois, sai —
+mesmo bonito.
+
+---
+
 ## Riscos
 
 ### R-01 🔴 Só um dos três destaques está apresentável publicamente

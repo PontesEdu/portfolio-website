@@ -152,14 +152,24 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background font-sans text-foreground antialiased;
-    font-feature-settings: "cv11";
+  /* Impede que o header fixo cubra o alvo de uma ancora ou o elemento que
+     acabou de receber foco (WCAG 2.2 SC 2.4.11). Vale para navegacao por
+     teclado, nao so para links de ancora. */
+  html {
+    scroll-padding-top: 5rem;
   }
 
-  /* Tracking negativo em titulo grande. Sem isso a fonte parece um default nao
-     ajustado -- e um dos sinais mais visiveis de template. */
-  h1,
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  /* Tracking negativo, mais forte conforme o tamanho cresce. Sem isso a fonte
+     parece um default nao ajustado -- e um dos sinais mais visiveis de
+     template. */
+  h1 {
+    letter-spacing: -0.03em;
+  }
+
   h2 {
     letter-spacing: -0.022em;
   }
@@ -172,11 +182,34 @@
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;
   }
+}
 
-  /* Impede que o header fixo cubra o alvo de uma ancora (WCAG 2.2 SC 2.4.11). */
-  :target {
-    scroll-margin-top: 5rem;
+/* ---------------------------------------------------------------------------
+   Utilitarios do sistema tipografico e de layout
+--------------------------------------------------------------------------- */
+
+/* Largura de layout. Distinta da medida de leitura: texto corrido usa
+   max-w-[66ch] por dentro, que e o intervalo legivel para coluna unica. */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 56rem;
+  padding-inline: 1.5rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
   }
+}
+
+/* Rotulo de secao e metadado. A mono aparece so aqui e em tags, datas e codigo
+   inline -- em corpo de texto ou titulo ela vira cosplay de terminal. */
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
 }
 
 @media (prefers-reduced-motion: reduce) {

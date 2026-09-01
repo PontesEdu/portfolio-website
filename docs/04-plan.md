@@ -77,7 +77,7 @@ duas paletas antes de avançar.
 
 ---
 
-## Fase 2 — Layout e navegação
+## Fase 2 — Layout e navegação ✅ implementada, aguardando validação
 
 **Objetivo:** o esqueleto navegável, responsivo e acessível.
 
@@ -91,13 +91,22 @@ footer · skip link · container de largura de leitura · `not-found.tsx`
 
 **Critérios de aceitação**
 
-- [ ] Navegação completa por teclado, com foco visível em todo elemento
-- [ ] Skip link é o primeiro elemento focável e funciona
-- [ ] Header sticky não cobre o elemento focado (SC 2.4.11)
-- [ ] Todo botão de ícone tem `aria-label`
+- [x] Navegação completa por teclado, com foco visível em todo elemento
+- [x] Skip link é o primeiro elemento focável e funciona — confirmado no HTML
+      pré-renderizado; `tabIndex={-1}` no `<main>` para o foco pousar de fato
+- [x] Header sticky não cobre o elemento focado (SC 2.4.11) — via
+      `scroll-padding-top` no `<html>`, que vale para foco e não só para âncora
+- [x] Todo botão de ícone tem `aria-label` — auditado no HTML gerado: zero
+      botões sem nome acessível
 - [ ] Zero scroll horizontal em 320, 375, 768, 1024, 1440 e 1920 px
-- [ ] Alvos de toque ≥ 24×24 px
-- [ ] `header.tsx` continua Server Component; `"use client"` só nas folhas
+      — depende de verificação visual do autor
+- [x] Alvos de toque ≥ 24×24 px
+- [x] `header.tsx` continua Server Component; `"use client"` só nas folhas
+      (`mobile-nav`, `theme-toggle`)
+
+**Resultado:** landmarks conferidos no HTML pré-renderizado — um `<main>`, um
+`<header>`, um `<footer>`, um `<h1>`, `lang="pt-BR"`. Custo em bundle: +0,4 kB
+gzip sobre a linha de base da Fase 1.
 
 **Riscos:** menu mobile é o ponto onde armadilha de acessibilidade costuma
 entrar (foco preso, `aria-expanded` ausente, scroll do body). Usar a primitiva do

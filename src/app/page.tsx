@@ -1,102 +1,61 @@
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
 import { perfil } from "@/content/perfil";
 import { stack } from "@/content/stack";
 
 /**
- * Pagina temporaria da Fase 1.
+ * Página temporária.
  *
- * Existe apenas para validar visualmente as duas rampas de cor, a tipografia e
- * a troca de tema antes de as secoes reais serem construidas. E substituida
- * pela home na Fase 3.
+ * Serve para validar as rampas de cor, a tipografia e agora a navegação por
+ * âncora e por teclado. As seções abaixo são só andaimes com os ids corretos --
+ * cada uma é substituída pela seção real nas Fases 3 a 6.
  */
 
 const passos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-function Rampa({ nome, prefixo }: { nome: string; prefixo: string }) {
-  return (
-    <div>
-      <p className="mb-2 font-mono text-xs text-muted-foreground uppercase">
-        {nome}
-      </p>
-      <div className="flex overflow-hidden rounded-md border border-border">
-        {passos.map((passo) => (
-          <div
-            key={passo}
-            className="flex h-12 flex-1 items-end justify-center pb-1 font-mono text-[10px] text-muted-foreground"
-            style={{ background: `var(--${prefixo}-${passo})` }}
-          >
-            {passo}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+const secoesPendentes = [
+  { id: "projetos", titulo: "Projetos", fase: "Fase 5" },
+  { id: "sobre", titulo: "Sobre", fase: "Fase 4" },
+  { id: "trajetoria", titulo: "Trajetória", fase: "Fase 4" },
+  { id: "contato", titulo: "Contato", fase: "Fase 6" },
+];
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-3xl px-6 py-16">
-      <div className="mb-12 flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-4xl font-semibold">{perfil.nome}</h1>
-          <p className="mt-2 font-mono text-sm text-muted-foreground">
-            {perfil.cargo} · {perfil.localizacao}
-          </p>
-        </div>
-        <ThemeToggle />
-      </div>
+    <div className="container-page py-16">
+      <h1 className="text-4xl font-semibold sm:text-5xl">{perfil.nome}</h1>
+      <p className="mt-3 label-mono">
+        {perfil.cargo} · {perfil.localizacao}
+      </p>
 
-      <p className="max-w-[66ch] text-lg leading-relaxed">{perfil.resumo}</p>
+      <p className="mt-8 max-w-[66ch] text-lg leading-relaxed">
+        {perfil.resumo}
+      </p>
       <p className="mt-4 max-w-[66ch] leading-relaxed text-muted-foreground">
         {perfil.bio}
       </p>
 
-      <section className="mt-14 space-y-6">
-        <h2 className="text-2xl font-semibold">Rampas de cor</h2>
-        <Rampa nome="Neutro" prefixo="neutral" />
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <p className="mb-2 font-mono text-xs text-muted-foreground uppercase">
-              Superfícies
-            </p>
-            <div className="space-y-2 rounded-lg border border-border bg-card p-4">
-              <p className="text-sm">Card sobre o fundo da página</p>
-              <div className="rounded-md border border-border bg-popover p-3">
-                <p className="text-sm text-muted-foreground">
-                  Superfície sobreposta
-                </p>
-              </div>
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold">Rampa neutra</h2>
+        <div className="mt-4 flex overflow-hidden rounded-lg border border-border">
+          {passos.map((passo) => (
+            <div
+              key={passo}
+              className="flex h-14 flex-1 items-end justify-center pb-1 font-mono text-[10px] text-muted-foreground"
+              style={{ background: `var(--neutral-${passo})` }}
+            >
+              {passo}
             </div>
-          </div>
-          <div>
-            <p className="mb-2 font-mono text-xs text-muted-foreground uppercase">
-              Interativos
-            </p>
-            <div className="flex flex-wrap items-center gap-2">
-              <Button>Primário</Button>
-              <Button variant="outline">Contorno</Button>
-              <Button variant="ghost">Fantasma</Button>
-              <Button variant="destructive">Perigo</Button>
-            </div>
-            <input
-              className="mt-3 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-              placeholder="Campo de formulário"
-              aria-label="Campo de exemplo"
-            />
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="mt-14">
-        <h2 className="mb-4 text-2xl font-semibold">Stack</h2>
-        <div className="space-y-4">
+      <section id="stack" className="mt-16 scroll-mt-24">
+        <p className="label-mono">Seção</p>
+        <h2 className="mt-2 text-2xl font-semibold">Stack</h2>
+        <div className="mt-6 space-y-5">
           {stack.map((grupo) => (
             <div key={grupo.titulo}>
-              <p className="mb-2 font-mono text-xs text-muted-foreground uppercase">
-                {grupo.titulo}
-              </p>
-              <ul className="flex flex-wrap gap-2">
+              <p className="label-mono">{grupo.titulo}</p>
+              <ul className="mt-2 flex flex-wrap gap-2">
                 {grupo.itens.map((item) => (
                   <li
                     key={item}
@@ -110,6 +69,21 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </main>
+
+      {secoesPendentes.map((secao) => (
+        <section
+          key={secao.id}
+          id={secao.id}
+          className="mt-16 scroll-mt-24 border-t border-border pt-10"
+        >
+          <p className="label-mono">{secao.fase}</p>
+          <h2 className="mt-2 text-2xl font-semibold">{secao.titulo}</h2>
+          <p className="mt-3 max-w-[66ch] text-muted-foreground">
+            Seção ainda não construída. O andaime existe para validar a
+            navegação por âncora e o comportamento do header fixo.
+          </p>
+        </section>
+      ))}
+    </div>
   );
 }

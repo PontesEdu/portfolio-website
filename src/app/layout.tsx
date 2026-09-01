@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { perfil } from "@/content/perfil";
 import { siteUrl } from "@/lib/site";
 
 import "./globals.css";
 
-const sans = Geist({
+// Inter no corpo e na interface, JetBrains Mono em metadado. Ambas variaveis:
+// um arquivo cobre toda a faixa de pesos, em vez de um download por peso.
+const sans = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const mono = Geist_Mono({
+const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
@@ -45,7 +49,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          {/* Primeiro elemento focavel da pagina. Fica fora da tela ate
+              receber foco pelo teclado. */}
+          <a
+            href="#conteudo"
+            className="sr-only bg-background text-foreground ring-ring focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:px-4 focus:py-2 focus:ring-2"
+          >
+            Pular para o conteúdo
+          </a>
+
+          <Header />
+
+          {/* Unico <main> do site: as paginas so entregam o conteudo.
+              tabIndex={-1} faz o foco realmente pousar aqui quando o skip link
+              e acionado -- sem isso, varios navegadores rolam a pagina mas
+              deixam o foco no link, e a tabulacao seguinte volta ao header. */}
+          <main id="conteudo" tabIndex={-1} className="flex-1 outline-none">
+            {children}
+          </main>
+
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
