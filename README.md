@@ -54,7 +54,6 @@ src/
   content/      conteúdo do site em módulos TypeScript tipados
   lib/          utilidades
 public/         imagens e currículo
-docs/           documentação do projeto
 ```
 
 O conteúdo do site fica em `src/content/` como módulos TypeScript tipados, e não
@@ -73,11 +72,3 @@ O tema escuro não é uma inversão do claro: a elevação é feita por luminosi
 em vez de sombra, não há branco nem preto puro, e o acento é dessaturado. Todos
 os pares de contraste foram verificados contra WCAG 2.2 AA nos dois temas.
 
-## Documentação
-
-A pasta [`docs/`](./docs) registra as decisões do projeto:
-
-- [`01-discovery.md`](./docs/01-discovery.md) — levantamento de conteúdo
-- [`02-research.md`](./docs/02-research.md) — pesquisa que embasou o design
-- [`03-decisions.md`](./docs/03-decisions.md) — decisões técnicas e visuais
-- [`04-plan.md`](./docs/04-plan.md) — plano de implementação por fases
