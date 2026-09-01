@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Rampa de cor
+
+   Cada tema tem sua propria rampa de 12 passos, e o mesmo numero significa a
+   mesma funcao nos dois temas. Por isso nenhum componente precisa saber em qual
+   tema esta: ele usa o token semantico, e a rampa resolve o resto.
+
+     1-2    fundo da aplicacao e primeira superficie elevada
+     3-5    fundo de componente: normal, hover, pressionado
+     6-8    borda: sutil, interativa, forte (e campo de formulario)
+     9-10   preenchimento solido e seu hover
+     11-12  texto de baixo contraste e de alto contraste
+
+   No tema escuro a elevacao e feita por luminosidade, nunca por sombra: sombra
+   escura sobre fundo escuro nao tem contraste. Nao ha branco nem preto puro em
+   lugar nenhum -- preto puro contra texto claro causa halacao.
+
+   Todos os pares de contraste foram verificados contra WCAG 2.2 AA nos dois
+   temas: 4.5:1 para texto, 3:1 para borda de campo e anel de foco.
+--------------------------------------------------------------------------- */
+
+:root {
+  --neutral-1: oklch(0.993 0.002 250);
+  --neutral-2: oklch(0.978 0.003 250);
+  --neutral-3: oklch(0.96 0.004 250);
+  --neutral-4: oklch(0.94 0.005 250);
+  --neutral-5: oklch(0.917 0.006 250);
+  --neutral-6: oklch(0.897 0.007 250);
+  --neutral-7: oklch(0.862 0.009 250);
+  --neutral-8: oklch(0.648 0.014 250);
+  --neutral-9: oklch(0.556 0.016 250);
+  --neutral-10: oklch(0.508 0.016 250);
+  --neutral-11: oklch(0.487 0.014 250);
+  --neutral-12: oklch(0.205 0.011 250);
+
+  --brand-8: oklch(0.64 0.15 237);
+  --brand-9: oklch(0.52 0.17 237);
+  --brand-10: oklch(0.47 0.17 237);
+  --brand-11: oklch(0.5 0.16 237);
+  --brand-contrast: oklch(0.995 0 0);
+
+  --danger-9: oklch(0.52 0.19 27);
+  --danger-contrast: oklch(0.995 0 0);
+}
+
+.dark {
+  --neutral-1: oklch(0.178 0.006 250);
+  --neutral-2: oklch(0.213 0.007 250);
+  --neutral-3: oklch(0.246 0.008 250);
+  --neutral-4: oklch(0.278 0.009 250);
+  --neutral-5: oklch(0.31 0.01 250);
+  --neutral-6: oklch(0.345 0.011 250);
+  --neutral-7: oklch(0.4 0.013 250);
+  --neutral-8: oklch(0.505 0.015 250);
+  --neutral-9: oklch(0.64 0.016 250);
+  --neutral-10: oklch(0.69 0.016 250);
+  --neutral-11: oklch(0.74 0.013 250);
+  --neutral-12: oklch(0.968 0.004 250);
+
+  /* Acento dessaturado: a mesma cor saturada que funciona no claro vibra e
+     perde contraste sobre fundo escuro. */
+  --brand-8: oklch(0.68 0.12 237);
+  --brand-9: oklch(0.68 0.13 237);
+  --brand-10: oklch(0.73 0.13 237);
+  --brand-11: oklch(0.78 0.105 237);
+  --brand-contrast: oklch(0.178 0.006 250);
+
+  --danger-9: oklch(0.65 0.16 27);
+  --danger-contrast: oklch(0.178 0.006 250);
+}
+
+/* ---------------------------------------------------------------------------
+   Tokens semanticos
+
+   Unica camada que os componentes consomem. Trocar a rampa acima muda o site
+   inteiro sem tocar em nenhum componente.
+--------------------------------------------------------------------------- */
+
+:root,
+.dark {
+  --background: var(--neutral-1);
+  --foreground: var(--neutral-12);
+
+  --card: var(--neutral-2);
+  --card-foreground: var(--neutral-12);
+  --popover: var(--neutral-3);
+  --popover-foreground: var(--neutral-12);
+
+  --primary: var(--brand-9);
+  --primary-foreground: var(--brand-contrast);
+  --secondary: var(--neutral-3);
+  --secondary-foreground: var(--neutral-12);
+
+  --muted: var(--neutral-3);
+  --muted-foreground: var(--neutral-11);
+
+  /* Em shadcn, "accent" e o fundo de hover -- nao a cor de marca. */
+  --accent: var(--neutral-4);
+  --accent-foreground: var(--neutral-12);
+
+  --destructive: var(--danger-9);
+  --destructive-foreground: var(--danger-contrast);
+
+  --border: var(--neutral-6);
+  --input: var(--neutral-8);
+  --ring: var(--brand-8);
+
+  --link: var(--brand-11);
+
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-link: var(--link);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-feature-settings: "cv11";
+  }
+
+  /* Tracking negativo em titulo grande. Sem isso a fonte parece um default nao
+     ajustado -- e um dos sinais mais visiveis de template. */
+  h1,
+  h2 {
+    letter-spacing: -0.022em;
+  }
+
+  h3,
+  h4 {
+    letter-spacing: -0.015em;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+
+  /* Impede que o header fixo cubra o alvo de uma ancora (WCAG 2.2 SC 2.4.11). */
+  :target {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
