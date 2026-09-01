@@ -114,7 +114,7 @@ shadcn em vez de implementar do zero.
 
 ---
 
-## Fase 3 — Hero
+## Fase 3 — Hero ✅ implementada, aguardando validação
 
 **Objetivo:** resolver os primeiros 7 segundos.
 
@@ -129,12 +129,22 @@ localização, objetivo (estágio/júnior) e CTAs — Ver projetos · GitHub · 
 **Critérios de aceitação**
 
 - [ ] Nome, cargo, stack e objetivo legíveis na primeira tela **sem scroll**, em
-      1366×768 e em 375×667
-- [ ] **Nenhuma animação de entrada no hero** — protege o LCP
-- [ ] Texto puro, sem imagem de placeholder
-- [ ] Um único `<h1>`
-- [ ] Existe indicação visual de que a página continua abaixo da dobra
-- [ ] Todos os links externos funcionam e abrem corretamente
+      1366×768 e em 375×667 — espaçamento calculado para caber nas duas alturas,
+      mas depende de conferência do autor
+- [x] **Nenhuma animação de entrada no hero** — verificado no HTML gerado: sem
+      `opacity-0` e sem classe `animate-`
+- [x] Texto puro, sem imagem de placeholder
+- [x] Um único `<h1>`
+- [x] Existe indicação visual de que a página continua abaixo da dobra — a régua
+      com a stack fecha o hero e a seção seguinte entra na dobra
+- [~] Todos os links externos funcionam — GitHub responde 200; o LinkedIn
+      devolve 999 (anti-bot padrão da plataforma) e precisa de conferência
+      manual do autor
+
+**Resultado:** toda âncora da navegação tem um id correspondente na página.
+Corrigidos na revisão: `label-mono` tinha `line-height: 1`, que faria as linhas
+se tocarem quando o rótulo quebrasse em telas estreitas; e o espaçamento vertical
+do hero era grande demais para caber em 375×667.
 
 **Riscos:** a tentação de "enfeitar o hero" é onde este projeto mais pode se
 perder. Se surgir dúvida entre informação e efeito, ganha a informação.

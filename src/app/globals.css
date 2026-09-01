@@ -206,7 +206,9 @@
 @utility label-mono {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  line-height: 1;
+  /* 1.4 e nao 1: um rotulo de uma linha nao nota a diferenca, mas quando o
+     texto quebra em telas estreitas, line-height 1 faz as linhas se tocarem. */
+  line-height: 1.4;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted-foreground);

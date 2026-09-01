@@ -292,6 +292,32 @@ mesmo bonito.
 
 ---
 
+### D-20 ✅ Selo de disponibilidade no hero usa a cor de destaque
+
+O hero abre com um ponto na cor de destaque seguido de "Disponível para estágio
+ou vaga júnior", em mono caixa-alta.
+
+**Por quê:** a regra do guia diz que a cor de destaque só aparece em elemento
+interativo, para impedir cor decorativa. Este caso é a exceção deliberada — o
+ponto não decora, ele carrega a informação que é o primeiro filtro de qualquer
+recrutador. Aplicar a regra ao pé da letra aqui esconderia justamente o dado que
+a pesquisa aponta como decisivo nos primeiros segundos.
+
+**Limite da exceção:** vale para indicador de estado com significado próprio.
+Não abre precedente para cor em ícone, borda, fundo ou título.
+
+---
+
+### D-21 ✅ Hero sem imagem e sem animação de entrada
+
+**Por quê:** o `<h1>` é quase certamente o elemento de LCP. Animar a entrada
+começando em `opacity: 0` adia a métrica até a hidratação e a animação
+terminarem — é o erro de performance mais comum em portfólio. E hero sem imagem
+é escolha legítima, usada por `alexnaraghi.com` e `leerob.com`: elimina o modo de
+falha mais frequente, que é uma ilustração genérica barateando a página.
+
+---
+
 ## Riscos
 
 ### R-01 🔴 Só um dos três destaques está apresentável publicamente

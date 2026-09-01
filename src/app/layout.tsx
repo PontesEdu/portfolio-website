@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: `${perfil.nome} — ${perfil.cargo}`,
     template: `%s · ${perfil.nome}`,
   },
-  description: `${perfil.resumo} ${perfil.objetivo}`,
+  description: `${perfil.cargo} em ${perfil.localizacao}. ${perfil.resumo} ${perfil.objetivo}.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -45,3 +45,7 @@ next-env.d.ts
 
 # gerado automaticamente pelo next dev
 AGENTS.md
+
+
+# não quero que apareça o docs por que se não vai ficar com cara de IA
+/docs

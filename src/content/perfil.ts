@@ -27,7 +27,21 @@ export const perfil = {
     "Elgato Marketplace. Estudo Análise e Desenvolvimento de Sistemas na FIAP e venho me " +
     "aprofundando em TypeScript, React, Next.js e Node.js.",
 
-  objetivo: "Buscando estágio ou vaga júnior em desenvolvimento.",
+  /** Usado como selo no hero e no fim da description da metadata. */
+  objetivo: "Disponível para estágio ou vaga júnior",
+
+  /**
+   * Só as tecnologias que sustentam os projetos em destaque. A lista completa
+   * fica na seção Stack -- aqui o objetivo é o recrutador reconhecer a stack
+   * em um olhar, não ler um inventário.
+   */
+  stackPrincipal: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+  ] as const,
 
   email: "edupontessilva03@gmail.com",
   github: "https://github.com/PontesEdu",
