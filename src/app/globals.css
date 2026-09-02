@@ -47,6 +47,12 @@
 
   --danger-9: oklch(0.52 0.19 27);
   --danger-contrast: oklch(0.995 0 0);
+
+  /* Cores de marca de terceiros. Ficam fora da rampa de propósito: não são
+     tokens do tema, são constantes de identidade de cada serviço. Usadas só no
+     marcador ao lado do rótulo, nunca no botão inteiro. */
+  --marca-github: oklch(0.25 0.008 250);
+  --marca-linkedin: oklch(0.5 0.15 253);
 }
 
 .dark {
@@ -73,6 +79,11 @@
 
   --danger-9: oklch(0.65 0.16 27);
   --danger-contrast: oklch(0.178 0.006 250);
+
+  /* O GitHub inverte a própria marca no escuro; o azul do LinkedIn é
+     clareado e dessaturado pelo mesmo motivo que o acento do tema é. */
+  --marca-github: oklch(0.93 0.004 250);
+  --marca-linkedin: oklch(0.7 0.12 253);
 }
 
 /* ---------------------------------------------------------------------------

@@ -60,6 +60,9 @@ export const perfil = {
   email: "edupontessilva03@gmail.com",
   github: "https://github.com/PontesEdu",
   linkedin: "https://www.linkedin.com/in/eduardo-pontes-silva",
+
+  /** Versao sem telefone: o PDF fica publico e indexavel. */
+  curriculo: "/curriculo-eduardo-pontes.pdf",
 } as const;
 
 export const navegacao: Link[] = [

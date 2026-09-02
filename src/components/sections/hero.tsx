@@ -1,5 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
-
+import { SocialButton } from "@/components/social-button";
 import { Button } from "@/components/ui/button";
 import { perfil } from "@/content/perfil";
 
@@ -19,9 +18,9 @@ import { perfil } from "@/content/perfil";
  */
 
 const linksExternos = [
-  { label: "GitHub", href: perfil.github },
-  { label: "LinkedIn", href: perfil.linkedin },
-];
+  { label: "GitHub", href: perfil.github, cor: "github" },
+  { label: "LinkedIn", href: perfil.linkedin, cor: "linkedin" },
+] as const;
 
 export function Hero() {
   return (
@@ -55,18 +54,8 @@ export function Hero() {
           <a href="#projetos">Ver projetos</a>
         </Button>
 
-        {linksExternos.map(({ label, href }) => (
-          <Button key={label} asChild variant="outline" size="lg">
-            <a href={href} target="_blank" rel="noreferrer">
-              {label}
-              {/* Uma propriedade muda no hover. A seta também comunica que o
-                  link sai do site. */}
-              <ArrowUpRight
-                className="size-4 transition-transform duration-200 ease-out group-hover/button:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </a>
-          </Button>
+        {linksExternos.map((link) => (
+          <SocialButton key={link.label} {...link} size="lg" />
         ))}
       </div>
 

@@ -1,7 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+import { FileText } from "lucide-react";
 
 import { CopyEmail } from "@/components/copy-email";
 import { SectionHeading } from "@/components/section-heading";
+import { SocialButton } from "@/components/social-button";
 import { Button } from "@/components/ui/button";
 import { perfil } from "@/content/perfil";
 
@@ -14,9 +15,9 @@ import { perfil } from "@/content/perfil";
  */
 
 const redes = [
-  { label: "LinkedIn", href: perfil.linkedin },
-  { label: "GitHub", href: perfil.github },
-];
+  { label: "LinkedIn", href: perfil.linkedin, cor: "linkedin" },
+  { label: "GitHub", href: perfil.github, cor: "github" },
+] as const;
 
 export function Contato() {
   return (
@@ -36,17 +37,16 @@ export function Contato() {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        {redes.map(({ label, href }) => (
-          <Button key={label} asChild variant="ghost">
-            <a href={href} target="_blank" rel="noreferrer">
-              {label}
-              <ArrowUpRight
-                aria-hidden="true"
-                className="size-4 transition-transform duration-200 ease-out group-hover/button:translate-x-0.5"
-              />
-            </a>
-          </Button>
+        {redes.map((rede) => (
+          <SocialButton key={rede.label} {...rede} />
         ))}
+
+        <Button asChild variant="outline">
+          <a href={perfil.curriculo} target="_blank" rel="noreferrer">
+            <FileText className="size-4" aria-hidden="true" />
+            Currículo em PDF
+          </a>
+        </Button>
       </div>
     </section>
   );
