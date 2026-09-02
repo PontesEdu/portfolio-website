@@ -3,6 +3,8 @@
 Portfólio pessoal, construído com Next.js e TypeScript. Reúne minha trajetória,
 minha stack e os projetos que melhor representam o que eu construo.
 
+🔗 **[www.eduardopontes.dev](https://www.eduardopontes.dev)**
+
 ---
 
 ## Stack
