@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/section-heading";
 import { Hero } from "@/components/sections/hero";
+import { Projetos } from "@/components/sections/projetos";
 import { Sobre } from "@/components/sections/sobre";
 import { Stack } from "@/components/sections/stack";
 import { Trajetoria } from "@/components/sections/trajetoria";
@@ -12,7 +13,6 @@ import { Trajetoria } from "@/components/sections/trajetoria";
  */
 
 const secoesPendentes = [
-  { id: "projetos", indice: "01", titulo: "Projetos", fase: "Fase 5" },
   { id: "contato", indice: "05", titulo: "Contato", fase: "Fase 6" },
 ];
 
@@ -39,11 +39,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <SecaoPendente {...secoesPendentes[0]} />
+      <Projetos />
       <Sobre />
       <Stack />
       <Trajetoria />
-      <SecaoPendente {...secoesPendentes[1]} />
+      <SecaoPendente {...secoesPendentes[0]} />
     </>
   );
 }

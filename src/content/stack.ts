@@ -26,7 +26,7 @@ export const stack: GrupoDeStack[] = [
       "shadcn/ui",
       "React Query",
       "React Hook Form",
-      "React Router",
+      "Zod",
     ],
   },
   {
@@ -43,7 +43,7 @@ export const stack: GrupoDeStack[] = [
   },
   {
     titulo: "Ferramentas",
-    itens: ["Git", "GitHub", "Docker", "Vitest"],
+    itens: ["Git & GitHub", "Docker", "Vitest"],
   },
   {
     titulo: "Práticas",
