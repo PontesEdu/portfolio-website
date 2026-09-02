@@ -47,9 +47,10 @@ export function Reveal({
         setVisivel(true);
         observador.disconnect();
       },
-      // Dispara um pouco antes de encostar na borda inferior, para o elemento
-      // já estar visível quando o usuário chega nele.
-      { rootMargin: "0px 0px -8% 0px" },
+      // Encolhe a área de observação por baixo: o bloco só conta como visível
+      // depois de subir 15% da tela. Sem isso a animação acontece rente à borda
+      // inferior, onde o olho não está, e o efeito passa despercebido.
+      { rootMargin: "0px 0px -15% 0px" },
     );
 
     observador.observe(elemento);
@@ -62,7 +63,7 @@ export function Reveal({
       data-reveal
       data-visivel={visivel ? "true" : undefined}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-      className="translate-y-5 opacity-0 transition duration-300 ease-out data-[visivel=true]:translate-y-0 data-[visivel=true]:opacity-100"
+      className="translate-y-5 opacity-0 transition duration-[350ms] ease-out data-[visivel=true]:translate-y-0 data-[visivel=true]:opacity-100"
     >
       {children}
     </div>
