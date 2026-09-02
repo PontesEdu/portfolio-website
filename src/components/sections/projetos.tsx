@@ -45,7 +45,29 @@ export function Projetos() {
                 <span className="mt-1 block max-w-[66ch] text-sm text-muted-foreground">
                   {projeto.descricao}
                 </span>
+
+                <span className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                  {projeto.stack.map((tecnologia) => (
+                    <span key={tecnologia} className="label-mono">
+                      {tecnologia}
+                    </span>
+                  ))}
+                </span>
               </a>
+
+              {/* Fora do link do repositório: link dentro de link é HTML
+                  inválido e quebra a navegação por teclado. */}
+              {projeto.demo && (
+                <a
+                  href={projeto.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="-mx-3 mt-1 inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-link transition-colors hover:underline"
+                >
+                  Ver no ar
+                  <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                </a>
+              )}
             </li>
           ))}
         </ul>

@@ -308,24 +308,34 @@ export const projetosDestaque: Projeto[] = [
   },
 ];
 
-/** Projetos menores, sem case. Apenas nome, uma linha e link. */
-export const outrosProjetos: Pick<
+/**
+ * Projetos menores, sem case. Nome, uma linha e link.
+ *
+ * `demo` so aparece quando existe um endereco publicado e funcionando -- botao
+ * de demo que nao abre custa mais confianca do que a ausencia do botao.
+ */
+export const outrosProjetos: (Pick<
   Projeto,
   "nome" | "descricao" | "stack" | "repositorio"
->[] = [
+> & { demo?: string })[] = [
   {
-    nome: "GoodMovies",
+    nome: "Fórum com NestJS",
     descricao:
-      "Catálogo de filmes e séries que consome a API do TMDB, com busca e listagens.",
-    stack: ["React", "React Query", "Axios"],
-    repositorio: "https://github.com/PontesEdu/GoodMovies",
+      "API de um fórum organizada em Clean Architecture e DDD, com autenticação por " +
+      "JWT e testes unitários e de ponta a ponta separados.",
+    stack: ["NestJS", "Prisma", "PostgreSQL", "Vitest"],
+    repositorio: "https://github.com/PontesEdu/05-nest-clean",
   },
   {
-    nome: "Blog com Next.js",
+    nome: "NNC Transportes",
     descricao:
-      "Blog estático com conteúdo em arquivos locais, renderizado no servidor.",
-    stack: ["Next.js", "Contentlayer", "Tailwind CSS"],
-    repositorio: "https://github.com/PontesEdu/site-blog-next-estudo",
+      "Site institucional e formulário de orçamento para uma transportadora de " +
+      "mudanças em São Paulo, que não tinha presença digital além do perfil no " +
+      "Google. O formulário entrega o pedido direto no WhatsApp da empresa, sem " +
+      "backend.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Zod"],
+    repositorio: "https://github.com/PontesEdu/nnc-transportes-website",
+    demo: "https://nnc-transportes.vercel.app",
   },
   {
     nome: "To-do list",
