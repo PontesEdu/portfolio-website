@@ -2,11 +2,18 @@ import { SectionHeading } from "@/components/section-heading";
 import { stack } from "@/content/stack";
 
 /**
- * Lista agrupada, sem barra de proficiência e sem parede de logos.
+ * Lista de tecnologias no formato de ficha técnica.
  *
- * "React 80%" não é falseável e é um dos sinais mais reconhecíveis de template.
- * Aqui cada item é uma afirmação simples, e toda tecnologia listada aparece
- * como tag em pelo menos um projeto -- então é verificável abrindo o código.
+ * Sem barra de proficiência e sem parede de logos: "React 80%" não é falseável
+ * e é um dos sinais mais reconhecíveis de template. Toda tecnologia listada
+ * aparece como tag em pelo menos um projeto, então é verificável abrindo o
+ * código.
+ *
+ * A escolha visual é deliberada: rótulo em mono à esquerda, valores em mono à
+ * direita, separados por réguas de 1px. É a linguagem de uma ficha técnica ou
+ * de um arquivo de configuração -- reconhecível para quem programa, e mais
+ * caracterizada do que uma sopa de chips arredondados, que é o padrão de
+ * template. A textura vem da tipografia e do espaço, não de ornamento.
  */
 export function Stack() {
   return (
@@ -16,24 +23,17 @@ export function Stack() {
     >
       <SectionHeading indice="03" titulo="Stack" />
 
-      <dl className="mt-10 space-y-8">
+      <dl className="mt-10 divide-y border-y">
         {stack.map((grupo) => (
           <div
             key={grupo.titulo}
-            className="grid gap-3 sm:grid-cols-[10rem_1fr] sm:gap-6"
+            className="grid gap-2 py-5 sm:grid-cols-[11rem_1fr] sm:gap-8 sm:py-6"
           >
-            <dt className="label-mono sm:pt-1.5">{grupo.titulo}</dt>
-            <dd>
-              <ul className="flex flex-wrap gap-2">
-                {grupo.itens.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-md border border-border bg-card px-2.5 py-1 font-mono text-xs"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <dt className="label-mono sm:pt-0.5">{grupo.titulo}</dt>
+            <dd className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
+              {grupo.itens.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
             </dd>
           </div>
         ))}
