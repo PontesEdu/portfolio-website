@@ -14,8 +14,12 @@ import { useEffect, useRef, useState } from "react";
  * O observador é desconectado na primeira aparição: reanimar a cada volta do
  * scroll é trabalho de main thread para sempre e lê como amador.
  *
- * Só `opacity` e `transform` são animados, então o navegador resolve tudo no
- * compositor e nada dispara layout. `prefers-reduced-motion` é tratado no
+ * Usa a lista de transição padrão do Tailwind, que cobre `opacity` e
+ * `translate`. Vale registrar: no Tailwind v4 os utilitários de deslocamento
+ * escrevem na propriedade `translate`, não em `transform` -- pedir
+ * `transition-[opacity,transform]` não anima o deslocamento, e a classe com
+ * vírgula nem chega a gerar CSS. As duas propriedades animadas são resolvidas
+ * no compositor, então nada dispara layout. `prefers-reduced-motion` é tratado no
  * globals.css, que reduz a duração de toda transição a 1ms -- o conteúdo
  * aparece na hora, sem movimento.
  *
@@ -58,7 +62,7 @@ export function Reveal({
       data-reveal
       data-visivel={visivel ? "true" : undefined}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-      className="translate-y-4 opacity-0 transition-[opacity,transform] duration-300 ease-out data-[visivel=true]:translate-y-0 data-[visivel=true]:opacity-100"
+      className="translate-y-5 opacity-0 transition duration-300 ease-out data-[visivel=true]:translate-y-0 data-[visivel=true]:opacity-100"
     >
       {children}
     </div>
