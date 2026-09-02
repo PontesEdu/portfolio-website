@@ -3,8 +3,6 @@
 Portfólio pessoal, construído com Next.js e TypeScript. Reúne minha trajetória,
 minha stack e os projetos que melhor representam o que eu construo.
 
-🔗 **[eduardopontes.vercel.app](https://eduardopontes.vercel.app)**
-
 ---
 
 ## Stack
@@ -72,3 +70,16 @@ O tema escuro não é uma inversão do claro: a elevação é feita por luminosi
 em vez de sombra, não há branco nem preto puro, e o acento é dessaturado. Todos
 os pares de contraste foram verificados contra WCAG 2.2 AA nos dois temas.
 
+## Qualidade
+
+Lighthouse no build de produção: **95** performance · **100** acessibilidade ·
+**100** boas práticas · **100** SEO.
+
+Não há suíte de testes unitários, e isso é uma decisão: o site não tem lógica
+para testar — sem ramificação, sem máquina de estado, sem transformação de
+dados. No lugar, `npm run typecheck`, `npm run lint` e `npm run build` cobrem o
+que de fato quebra aqui, e um build verde prova que toda página pré-renderiza.
+
+As animações de entrada usam `IntersectionObserver` e uma transição de CSS, sem
+biblioteca de animação: são 20px de deslocamento em 350ms, e uma dependência de
+mais de 30 kB não se justificaria para isso.
