@@ -30,6 +30,20 @@ export const metadata: Metadata = {
     template: `%s · ${perfil.nome}`,
   },
   description: `${perfil.cargo} em ${perfil.localizacao}. ${perfil.resumo} ${perfil.objetivo}.`,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    locale: "pt_BR",
+    url: siteUrl,
+    siteName: perfil.nome,
+    title: `${perfil.nome} — ${perfil.cargo}`,
+    description: `${perfil.resumo} ${perfil.objetivo}.`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${perfil.nome} — ${perfil.cargo}`,
+    description: `${perfil.resumo} ${perfil.objetivo}.`,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -43,6 +57,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sans.variable} ${mono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
+        {/* Sem JavaScript o IntersectionObserver do <Reveal> nunca roda e o
+            conteúdo ficaria invisível. Aqui ele nasce visível. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
