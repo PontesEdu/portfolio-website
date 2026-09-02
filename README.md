@@ -53,7 +53,7 @@ src/
   components/   componentes de UI e de seção
   content/      conteúdo do site em módulos TypeScript tipados
   lib/          utilidades
-public/         imagens e currículo
+public/         arquivos estáticos
 ```
 
 O conteúdo do site fica em `src/content/` como módulos TypeScript tipados, e não
