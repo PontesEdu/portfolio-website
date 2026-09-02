@@ -11,6 +11,11 @@ import "./globals.css";
 
 // Inter no corpo e na interface, JetBrains Mono em metadado. Ambas variaveis:
 // um arquivo cobre toda a faixa de pesos, em vez de um download por peso.
+//
+// So a Inter e pre-carregada. Ela desenha o <h1>, que e o elemento de LCP --
+// vale disputar o inicio do carregamento por ela. A mono aparece so em rotulo,
+// tag e data: mantê-la no caminho critico somava dezenas de kB antes da
+// primeira pintura para servir texto secundario.
 const sans = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -21,6 +26,7 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
