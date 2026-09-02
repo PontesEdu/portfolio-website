@@ -13,8 +13,8 @@ import { perfil } from "@/content/perfil";
  *   uma ilustração genérica de banco de imagens.
  * - O espaçamento é mais apertado no mobile porque nome, cargo, resumo, stack e
  *   CTAs precisam caber acima da dobra também em 375x667.
- * - O padding inferior é contido de propósito: a seção seguinte precisa
- *   aparecer na dobra para sinalizar que a página continua.
+ * - O padding inferior é contido de propósito: a borda superior da seção
+ *   seguinte precisa aparecer na dobra para sinalizar que a página continua.
  */
 
 const linksExternos = [
@@ -57,16 +57,6 @@ export function Hero() {
         {linksExternos.map((link) => (
           <SocialButton key={link.label} {...link} size="lg" />
         ))}
-      </div>
-
-      <div className="mt-10 border-t border-border pt-4 sm:mt-14 sm:pt-5">
-        <ul className="flex flex-wrap gap-x-5 gap-y-2">
-          {perfil.stackPrincipal.map((tecnologia) => (
-            <li key={tecnologia} className="label-mono">
-              {tecnologia}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
