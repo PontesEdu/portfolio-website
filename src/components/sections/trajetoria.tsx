@@ -106,9 +106,8 @@ export function Trajetoria() {
       <div className="mt-14 border-t pt-8">
         <h3 className="label-mono">Cursos concluídos</h3>
         <p className="mt-3 max-w-[66ch] text-sm leading-relaxed text-muted-foreground">
-          Os sete abaixo são uma amostra — os que mais se conectam ao que faço
-          hoje, cada um com link para o certificado. Ao todo são cerca de 50
-          cursos concluídos na Alura, além das trilhas da Rocketseat e de outros
+          Os sete abaixo são uma amostra. Ao todo são cerca de 50 cursos
+          concluídos na Alura, além das trilhas da Rocketseat e de outros
           cursos; parte dos certificados também está no{" "}
           <a
             href={perfil.linkedin}

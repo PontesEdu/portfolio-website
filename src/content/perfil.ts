@@ -31,13 +31,12 @@ export const perfil = {
       "NEOiD, empresa de tecnologia para produção e transmissão audiovisual, onde " +
       "presto suporte técnico e desenvolvo software para a operação.",
     "Ali criei o NEOiD PTZ Deck, um plugin que controla câmeras PTZ pela rede " +
-      "local. Foi com ele que aprendi sobre redes, protocolos de comunicação e " +
-      "integração com equipamentos de fabricantes diferentes.",
+      "local. Durante meu tempo na empresa, pude aplicar e aprofundar conhecimentos sobre redes, protocolos de comunicação e integração com equipamentos de diferentes fabricantes.",
     "Hoje curso Análise e Desenvolvimento de Sistemas na FIAP, onde participo de " +
       "projetos práticos e challenges em parceria com empresas, resolvendo " +
       "problemas reais em equipe.",
     "Sigo me aprofundando em TypeScript, React, Next.js e Node.js, com direção " +
-      "Fullstack. Fora isso, venho estudando arquitetura de aplicações, novos " +
+      "Fullstack. Fora isso, venho estudando arquitetura de software, novos " +
       "frameworks, experiência do usuário e automações com IA aplicadas ao dia a " +
       "dia de desenvolvimento.",
   ],

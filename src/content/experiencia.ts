@@ -32,11 +32,11 @@ export const trajetoria: EntradaDaTrajetoria[] = [
     atual: true,
     local: "São Paulo, SP · Presencial",
     descricao:
-      "Tecnologia para produção e transmissão audiovisual. Desenvolvo software para a " +
-      "operação e presto suporte técnico durante transmissões ao vivo.",
+      "Desenvolvimento de projetos e integração com equipamentos audiovisuais, " +
+      "adquirindo experiência prática com workflows de produção e transmissão ao vivo.",
     destaques: [
-      "Desenvolvo e mantenho o NEOiD PTZ Deck, plugin em TypeScript e Node.js que controla câmeras PTZ pela rede local via CGI/HTTP e VISCA, publicado na Elgato Marketplace.",
-      "Traduzo as necessidades das equipes de operação em soluções técnicas, com base na vivência prática de transmissão ao vivo e dos equipamentos usados.",
+      "Criação do NEOiD PTZ Deck, plugin para controle de câmeras PTZ pela rede.",
+      "Suporte técnico aos equipamentos da NEOiD e à operação de transmissão.",
     ],
   },
   {
