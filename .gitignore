@@ -48,3 +48,6 @@ AGENTS.md
 
 # documentacao interna de planejamento, nao versionada
 /docs/**
+# arquivos temporarios de verificacao
+*.tmp
+*.tmp.html
