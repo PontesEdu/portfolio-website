@@ -13,7 +13,7 @@ export type Link = {
 
 export const perfil = {
   nome: "Eduardo Pontes da Silva",
-  cargo: "Desenvolvedor Fullstack",
+  cargo: "Desenvolvedor de Software",
   localizacao: "São Paulo, SP",
 
   /** Uma frase, concreta, para o hero. */
