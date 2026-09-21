@@ -30,7 +30,7 @@ export const projetosDestaque: Projeto[] = [
       "zoom, foco, presets e rastreamento — por botões físicos do Stream Deck, sem " +
       "joystick nem software dedicado.",
     stack: ["TypeScript", "Node.js", "Stream Deck SDK", "Rollup"],
-    repositorio: "https://github.com/PontesEdu/NEOiD-PTZ-Deck-Elgato",
+    repositorio: "https://github.com/PontesEdu/NEOiD-PTZ-Deck",
     externo: {
       label: "Elgato Marketplace",
       href: "https://marketplace.elgato.com/product/neoid-ptz-deck-d260b006-c00d-44ae-91ec-85c0367c37df",
