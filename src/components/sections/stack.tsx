@@ -43,7 +43,7 @@ export function Stack() {
             >
               <span
                 aria-hidden="true"
-                className="row-span-2 pr-4 text-right label-mono tabular-nums transition-colors group-hover:text-foreground sm:row-span-1 sm:pt-0.5"
+                className="row-span-2 pr-4 text-right label-marker tabular-nums sm:row-span-1 sm:pt-0.5"
               >
                 {String(indice + 1).padStart(2, "0")}
               </span>
