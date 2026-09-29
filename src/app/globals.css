@@ -26,17 +26,24 @@
 --------------------------------------------------------------------------- */
 
 :root {
-  --neutral-1: oklch(0.993 0.002 250);
-  --neutral-2: oklch(0.978 0.003 250);
-  --neutral-3: oklch(0.96 0.004 250);
-  --neutral-4: oklch(0.94 0.005 250);
-  --neutral-5: oklch(0.917 0.006 250);
-  --neutral-6: oklch(0.897 0.007 250);
-  --neutral-7: oklch(0.862 0.009 250);
-  --neutral-8: oklch(0.648 0.014 250);
+  /* No claro a pagina e um branco levemente frio e o card e branco puro --
+     elevacao por luminosidade, a mesma regra do tema escuro. Antes o fundo
+     (0.993) e o card (0.978) eram quase identicos e a pagina lia como uma
+     folha so, sem separacao entre os blocos.
+     A diferenca de luminosidade entre pagina e card e de proposito pequena:
+     quem desenha a borda do card e a regua de 1px, nao um degrau de cinza.
+     Fundo cinza demais briga com o branco do card em vez de acomoda-lo. */
+  --neutral-1: oklch(0.988 0.003 250);
+  --neutral-2: oklch(0.9995 0.001 250);
+  --neutral-3: oklch(0.952 0.006 250);
+  --neutral-4: oklch(0.922 0.008 250);
+  --neutral-5: oklch(0.9 0.01 250);
+  --neutral-6: oklch(0.878 0.011 250);
+  --neutral-7: oklch(0.83 0.013 250);
+  --neutral-8: oklch(0.628 0.015 250);
   --neutral-9: oklch(0.556 0.016 250);
   --neutral-10: oklch(0.508 0.016 250);
-  --neutral-11: oklch(0.487 0.014 250);
+  --neutral-11: oklch(0.455 0.014 250);
   --neutral-12: oklch(0.205 0.011 250);
 
   --brand-8: oklch(0.64 0.15 237);
@@ -53,6 +60,7 @@
      marcador ao lado do rótulo, nunca no botão inteiro. */
   --marca-github: oklch(0.25 0.008 250);
   --marca-linkedin: oklch(0.5 0.15 253);
+  --marca-gmail: oklch(0.53 0.2 27);
 }
 
 .dark {
@@ -66,7 +74,7 @@
   --neutral-8: oklch(0.505 0.015 250);
   --neutral-9: oklch(0.64 0.016 250);
   --neutral-10: oklch(0.69 0.016 250);
-  --neutral-11: oklch(0.74 0.013 250);
+  --neutral-11: oklch(0.79 0.012 250);
   --neutral-12: oklch(0.968 0.004 250);
 
   /* Acento dessaturado: a mesma cor saturada que funciona no claro vibra e
@@ -84,6 +92,7 @@
      clareado e dessaturado pelo mesmo motivo que o acento do tema é. */
   --marca-github: oklch(0.93 0.004 250);
   --marca-linkedin: oklch(0.7 0.12 253);
+  --marca-gmail: oklch(0.72 0.16 30);
 }
 
 /* ---------------------------------------------------------------------------
@@ -123,6 +132,9 @@
   --ring: var(--brand-8);
 
   --link: var(--brand-11);
+  /* Um passo mais apagado que o texto secundario: o indice organiza a pagina,
+     nao compete com o titulo ao lado dele. */
+  --marker: var(--neutral-9);
 
   --radius: 0.5rem;
 }
@@ -148,6 +160,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-link: var(--link);
+  --color-marker: var(--marker);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -204,7 +217,7 @@
 @utility container-page {
   margin-inline: auto;
   width: 100%;
-  max-width: 56rem;
+  max-width: 68rem;
   padding-inline: 1.5rem;
 
   @media (width >= 40rem) {
@@ -216,13 +229,27 @@
    inline -- em corpo de texto ou titulo ela vira cosplay de terminal. */
 @utility label-mono {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  /* 13px e nao 12: em caixa alta, com tracking aberto e em cor de baixo
+     contraste, 12px fica no limite do legivel -- e este rotulo aparece em
+     toda secao, tag e data do site. */
+  font-size: 0.8125rem;
   /* 1.4 e nao 1: um rotulo de uma linha nao nota a diferenca, mas quando o
      texto quebra em telas estreitas, line-height 1 faz as linhas se tocarem. */
   line-height: 1.4;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+}
+
+/* Mesma forma do label-mono, na segunda cor. Marca estrutura: indice de secao
+   e numeracao da calha. */
+@utility label-marker {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--marker);
 }
 
 @media (prefers-reduced-motion: reduce) {
