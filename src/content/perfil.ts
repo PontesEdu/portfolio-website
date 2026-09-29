@@ -12,13 +12,16 @@ export type Link = {
 };
 
 export const perfil = {
-  nome: "Eduardo Pontes da Silva",
+  nome: "Eduardo Pontes",
   cargo: "Desenvolvedor de Software",
   localizacao: "São Paulo, SP",
 
   /** Uma frase, concreta, para o hero. */
   resumo:
     "Construo aplicações web com TypeScript, React e Node.js — e software que roda em produção.",
+
+  /** Foto usada no hero em telas grandes. */
+  foto: "/my-image.jpeg",
 
   /**
    * Parágrafos da seção Sobre. Todo dado confere com o currículo, com os
