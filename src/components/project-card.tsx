@@ -13,7 +13,8 @@ import type { Projeto } from "@/content/projetos";
  *
  * Os links ficam em botões separados em vez de o card inteiro ser clicável:
  * cada destino é externo e explícito, e não há uma página interna que seria o
- * alvo natural de um clique no bloco todo.
+ * alvo natural de um clique no bloco todo. Por isso o card também não tem
+ * estado de hover -- ele sugeriria um clique que não existe.
  */
 export function ProjectCard({ projeto }: { projeto: Projeto }) {
   const links = [
@@ -23,7 +24,7 @@ export function ProjectCard({ projeto }: { projeto: Projeto }) {
   ];
 
   return (
-    <li className="rounded-lg border p-6 transition-colors hover:bg-card sm:p-8">
+    <li className="rounded-lg border bg-card p-6 sm:p-8">
       <h3 className="text-xl font-semibold">{projeto.nome}</h3>
 
       <p className="mt-3 max-w-[60ch] leading-relaxed text-muted-foreground">
