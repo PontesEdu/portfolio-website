@@ -3,6 +3,7 @@
 import { Check, Copy } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { GmailIcon } from "@/components/brand-icons";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -15,6 +16,10 @@ import { Button } from "@/components/ui/button";
  *
  * O retorno visual não basta -- quem usa leitor de tela também precisa saber
  * que a cópia funcionou, e é para isso que serve a região com `aria-live`.
+ *
+ * O ícone do Gmail na cor da marca identifica o canal antes da leitura, do
+ * mesmo jeito que o ponto colorido faz no GitHub e no LinkedIn. A cor fica no
+ * ícone; o botão continua neutro.
  */
 export function CopyEmail({ email }: { email: string }) {
   const [copiado, setCopiado] = useState(false);
@@ -38,6 +43,10 @@ export function CopyEmail({ email }: { email: string }) {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Button variant="outline" onClick={copiar}>
+        <GmailIcon
+          className="size-4 shrink-0"
+          style={{ color: "var(--marca-gmail)" }}
+        />
         <span className="font-mono">{email}</span>
         {copiado ? (
           <Check className="size-4" aria-hidden="true" />
